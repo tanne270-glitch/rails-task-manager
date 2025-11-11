@@ -1,0 +1,22 @@
+<h1 class="mb-4">New task</h1>
+<div class="container mt-4">
+
+  <%= form_with model: @task, url: "/tasks", class: "mb-3" do |f| %>
+
+    <div class="mb-3">
+      <%= f.label :title, class: "form-label" %>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :details, class: "form-label" %>
+      <%= f.text_area :details, class: "form-control", rows: 3 %>
+    </div>
+
+    <!-- ไม่ต้องมี checkbox -->
+
+    <%= f.submit "Create Task", class: "btn btn-primary" %>
+  <% end %>
+
+  <%= link_to "Back to list", "/tasks", class: "text-decoration-none" %>
+</div>
